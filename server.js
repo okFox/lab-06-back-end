@@ -86,8 +86,6 @@ app.get('/location', async(req, res) => {
     const actualItem = JSON.parse(locationItem.text).results[0];
     const response = formatLocationResponse(actualItem);
 
-    latLngs = response;
-
     res.json(response);
 });
 
