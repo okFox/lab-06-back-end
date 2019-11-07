@@ -11,6 +11,7 @@ const superagent = require('superagent');
 app.use(cors());
 
 let latLngs;
+console.log(req.query);
 
 const formatLocationResponse = locationItem => {
     const {
@@ -66,7 +67,7 @@ app.get('/location', async(req, res) => {
 
     const actualItem = JSON.parse(locationItem.text).results[0];
     const response = formatLocationResponse(actualItem);
-
+    console.log(req.query);
     latLngs = response;
 
     res.json(response);
